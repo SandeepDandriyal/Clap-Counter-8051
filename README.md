@@ -1,1 +1,9 @@
 # Clap-Counter-8051
+
+This article explains the concept behind interfacing a sound sensor with the 8051 microcontroller (AT89C51). This project increases the count by one every time a sound is produced. It works well with the sound of a clap. The number of claps is displayed on an LCD module. The circuit consists of four modules, namely, a sound sensor, an amplifying circuit, a control circuit and a display module. The code for interfacing the sound sensor with the MCU is written in C language.
+
+The connections of different modules are shown in the circuit diagram. The data pins of the LCD are connected to port P2, while the control pins (RS, R/W & EN) are connected to pins 1-3 of port P1of AT89C51, respectively. The microcontroller receives sound pulses through the first pin of port P0.
+A condenser microphone is used to sense the sound produced by the clap. This mic is connected to a two stage transistor amplifier. The mic output is thus amplified to a suitable level so that it can be detected at the TTL logic. A switching circuit made from a single transistor is also employed after the amplifier. The purpose of this circuit is to convert the analog signals into discrete digital signals, which are used as input for the MCU.
+The output of the amplifier is coupled with a transistor switch. Whenever a high voltage output is received from the amplifier, it generates a pulse. The transistor switching circuit also ensures that a high TTL logic is not received at the microcontroller due to noise signals.
+The pulse, from the switching circuit, is fed to the microcontroller, which is programmed to detect the pulses. Every time a pulse in detected, the count value is increased by one. The output is displayed on a 16x2 LCD screen.
+The sensitivity of the sound sensor can be increased by improving the circuit of the amplifying unit. An op-amp can be used to increase the sensitivity.
